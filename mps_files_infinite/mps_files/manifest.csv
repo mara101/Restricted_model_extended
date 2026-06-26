@@ -1,0 +1,16 @@
+file,L,N_in_unit_cell,U,mu,t,n_max,conserve,chi_max,svd_min
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p05_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.05,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p0657143_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.06571428571428573,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p0814286_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.08142857142857143,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p0971429_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.09714285714285714,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p112857_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.11285714285714286,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p128571_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.12857142857142856,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p144286_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.1442857142857143,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p16_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.16000000000000003,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p175714_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.1757142857142857,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p191429_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.19142857142857145,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p207143_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.20714285714285713,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p222857_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.22285714285714286,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p238571_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.2385714285714286,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p254286_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.2542857142857143,5,None,200,1e-08
+Restricted_model_extended\mps_files_without_damping\mps_files\iMPS_U1_mu1_t0p27_consNone_chi200_L8_Nuc8_nmax5.mps,8,8,1.0,1.0,0.27,5,None,200,1e-08

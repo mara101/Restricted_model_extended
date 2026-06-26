@@ -1,0 +1,18 @@
+# geometry,L,n_max,N_IN_UNIT_CELL,U,mu_value,Conserve,t_value,chi_max,svd_min,alpha,r
+
+
+
+
+# Altre simulazioni finite conservando il dipolo
+
+finite,160,4,60,4,1,dipole,0.25,700,1e-8,1,3
+finite,160,4,80,4,1,dipole,0.25,700,1e-8,1,3
+finite,160,4,100,4,1,dipole,0.25,700,1e-8,1,3
+finite,160,4,120,4,1,dipole,0.25,700,1e-8,1,3
+finite,160,4,140,4,1,dipole,0.25,700,1e-8,1,3
+finite,160,4,180,4,1,dipole,0.25,700,1e-8,1,3
+finite,160,4,200,4,1,dipole,0.25,700,1e-8,1,3
+
+
+
+

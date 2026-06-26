@@ -1,0 +1,17 @@
+# --- Heavy generated research artifacts (reproducible from the scripts) ---
+# Saved DMRG states (binary pickles, large) and plots are NOT published.
+*.mps
+*.png
+
+# The extracted correlator CSVs (correlators_csv/) ARE kept: they are small
+# text files and hold the actual numerical data. To exclude them too, uncomment:
+# **/correlators_csv/*.csv
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/

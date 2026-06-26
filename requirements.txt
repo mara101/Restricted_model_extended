@@ -1,0 +1,7 @@
+physics-tenpy>=1.0
+numpy
+matplotlib
+pandas
+# For the interactive plot browser notebook
+jupyter
+ipywidgets

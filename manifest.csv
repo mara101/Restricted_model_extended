@@ -1,0 +1,8 @@
+convergence,n_sweeps,file,model,alpha,r,L,N_in_unit_cell,U,mu,t,n_max,conserve,chi_max_requested,chi_max_converged,svd_min
+converged,42,mps_files_finite\mps_files\fMPS_alpha1_r3_U4_mu1_t0p25_consdipole_chi700_L160_Nuc60_nmax4.mps,finite,1,3,160,60,4.0,1.0,0.25,4,dipole,700,700,1e-08
+converged,42,mps_files_finite\mps_files\fMPS_alpha1_r3_U4_mu1_t0p25_consdipole_chi700_L160_Nuc80_nmax4.mps,finite,1,3,160,80,4.0,1.0,0.25,4,dipole,700,700,1e-08
+converged,143,mps_files_finite\mps_files\fMPS_alpha1_r3_U4_mu1_t0p25_consdipole_chi700_L160_Nuc100_nmax4.mps,finite,1,3,160,100,4.0,1.0,0.25,4,dipole,700,700,1e-08
+converged,47,mps_files_finite\mps_files\fMPS_alpha1_r3_U4_mu1_t0p25_consdipole_chi700_L160_Nuc120_nmax4.mps,finite,1,3,160,120,4.0,1.0,0.25,4,dipole,700,700,1e-08
+timed_out,223,,finite,1,3,160,140,4.0,1.0,0.25,4,dipole,700,700,1e-08
+converged,42,mps_files_finite\mps_files\fMPS_alpha1_r3_U4_mu1_t0p25_consdipole_chi700_L160_Nuc180_nmax4.mps,finite,1,3,160,180,4.0,1.0,0.25,4,dipole,700,700,1e-08
+timed_out,257,,finite,1,3,160,200,4.0,1.0,0.25,4,dipole,700,700,1e-08

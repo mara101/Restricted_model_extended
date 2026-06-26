@@ -1,0 +1,2 @@
+file,L,N_in_unit_cell,U,mu,t,n_max,conserve,chi_max,svd_min
+Restricted_model_extended\mps_files_with_damping_finite\fMPS_damped_U1_mu1_t0p128571_consNone_chi200_L100_Nuc100_nmax5.mps,100,100,1.0,1.0,0.128571,5,None,200,1e-08

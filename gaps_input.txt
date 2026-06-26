@@ -1,0 +1,25 @@
+# Charge and dipole gap calculation input file
+# One point per line, 12 comma-separated fields:
+#
+#   geometry, L, n_max, N_IN_UNIT_CELL, U, mu, Conserve, t, chi_max, svd_min, alpha, r
+#
+# geometry      : "finite" or "infinite"
+# L             : number of sites (unit-cell length for infinite)
+# n_max         : maximum occupation per site
+# N_IN_UNIT_CELL: total number of particles in the ground-state sector
+# U             : on-site interaction strength
+# mu            : chemical potential
+# Conserve      : symmetry to conserve — "dipole", "N", "parity", or "None"
+# t             : hopping amplitude
+# chi_max       : maximum bond dimension
+# svd_min       : SVD truncation threshold
+# alpha         : interaction decay exponent (0 = none, 3 = 1/d^3 power law)
+# r             : maximum hopping range (1 = nearest-neighbour only)
+#
+# Header line (first field == "geometry") is skipped automatically.
+# Lines starting with '#' and blank lines are ignored.
+#
+#geometry, L, n_max, N_IN_UNIT_CELL, U, mu, Conserve, t, chi_max, svd_min, alpha, r
+
+
+finite,80,4,80,1,1,dipole,0.25,700,1e-8,1,3
