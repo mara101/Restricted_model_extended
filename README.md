@@ -1,11 +1,11 @@
 # Correlated-Hopping Bose–Hubbard Model — DMRG Toolkit
 
-A small set of Python tools I use, as an undergraduate research project in
+A set of Python tools, developed for an undergraduate research project in
 theoretical physics, to study an **extended correlated-hopping (dipole-conserving)
 Bose–Hubbard chain** with DMRG. The code is built on top of
 [TeNPy](https://tenpy.readthedocs.io/) (Tensor Network Python).
 
-The toolkit lets me:
+The toolkit can:
 
 1. Define the model (finite or infinite chain) with a tunable hopping range and
    power-law damping.
@@ -231,5 +231,5 @@ fMPS_alpha1_r3_U4_mu1_t0p25_consdipole_chi700_L160_Nuc100_nmax4.mps
 
 ## License
 
-This is research code shared for transparency and reproducibility. Feel free to
-read and adapt it; if you use it, a mention is appreciated.
+This is research code shared for transparency and reproducibility. It may be
+read and adapted freely; a citation is appreciated if it is used.
