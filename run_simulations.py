@@ -4,6 +4,7 @@ from pathlib import Path
 import argparse
 import pickle
 import csv
+import re
 
 from tenpy.algorithms import dmrg
 from tenpy.algorithms.mps_common import SubspaceExpansion
@@ -19,9 +20,9 @@ SIMULATIONS_INPUT_FILE = "simulations_input.txt"
 # ---------------------------------------------------------------------
 # GLOBAL DMRG SETTINGS
 # ---------------------------------------------------------------------
-MAX_SIMULATION_HOURS = 6
+MAX_SIMULATION_HOURS = 12
 
-DMRG_MAX_SWEEPS = 500
+DMRG_MAX_SWEEPS = 1000
 DMRG_MIN_SWEEPS = 20
 DMRG_MAX_E_ERR = 1e-7
 DMRG_MAX_S_ERR = 1e-6
@@ -227,6 +228,39 @@ def _build_output_filename(
     )
 
 
+_CHI_IN_NAME_RE = re.compile(r"_chi(\d+)_")
+
+
+def _chi_from_filename(path: Path) -> int:
+    """Bond dimension encoded in an MPS filename, or -1 if not parseable."""
+    m = _CHI_IN_NAME_RE.search(path.name)
+    return int(m.group(1)) if m else -1
+
+
+def _find_existing_outputs(
+    *,
+    sim_out_dir: Path,
+    geom_tag: str,
+    alpha: int,
+    r: int,
+    U: float,
+    mu: float,
+    t: float,
+    conserve: str | None,
+    L: int,
+    N_uc: int,
+    n_max: int,
+) -> list[Path]:
+    """All saved MPS files for these parameters, at any bond dimension."""
+    cons_tag = _conserve_tag(conserve)
+    tag = _model_tag(alpha, r)
+    pattern = (
+        f"{geom_tag}_{tag}_U{U:g}_mu{_tag(mu)}_t{_tag(t)}_cons{cons_tag}"
+        f"_chi*_L{L}_Nuc{N_uc}_nmax{n_max}.mps"
+    )
+    return sorted(sim_out_dir.glob(pattern))
+
+
 def _find_existing_output(
     *,
     sim_out_dir: Path,
@@ -241,13 +275,19 @@ def _find_existing_output(
     N_uc: int,
     n_max: int,
 ) -> Path | None:
-    cons_tag = _conserve_tag(conserve)
-    tag = _model_tag(alpha, r)
-    pattern = (
-        f"{geom_tag}_{tag}_U{U:g}_mu{_tag(mu)}_t{_tag(t)}_cons{cons_tag}"
-        f"_chi*_L{L}_Nuc{N_uc}_nmax{n_max}.mps"
+    matches = _find_existing_outputs(
+        sim_out_dir=sim_out_dir,
+        geom_tag=geom_tag,
+        alpha=alpha,
+        r=r,
+        U=U,
+        mu=mu,
+        t=t,
+        conserve=conserve,
+        L=L,
+        N_uc=N_uc,
+        n_max=n_max,
     )
-    matches = sorted(sim_out_dir.glob(pattern))
     return matches[0] if matches else None
 
 
@@ -391,7 +431,7 @@ def run_from_simulations_file(*, simulations_file: str, out_root: str):
         geom_tag = entry["geom_tag"]
         sim_out_dir = _resolve_output_dir_for_model(model_key, out_root)
 
-        existing_fpath = _find_existing_output(
+        existing_matches = _find_existing_outputs(
             sim_out_dir=sim_out_dir,
             geom_tag=geom_tag,
             alpha=alpha,
@@ -405,8 +445,17 @@ def run_from_simulations_file(*, simulations_file: str, out_root: str):
             n_max=n_max,
         )
 
-        if existing_fpath is not None:
-            print(f"File already exists, skipping: '{existing_fpath}'")
+        # Skip only if an existing result already reaches the requested bond
+        # dimension.  A file saved at a lower chi (e.g. chi500) does NOT satisfy
+        # a chi_max=700 request, so raising chi_max re-runs the simulation.
+        already_done = [
+            p for p in existing_matches if _chi_from_filename(p) >= chi_max
+        ]
+        if already_done:
+            print(
+                f"File already exists at chi>={chi_max}, skipping: "
+                f"'{already_done[0].name}'"
+            )
             counts["skipped"] += 1
             continue
 
